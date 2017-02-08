@@ -5,10 +5,10 @@ import java.util.ArrayList;
 /**
  * Created by ybolotnyy on 2/8/17.
  */
-public class ExtractSumFromString {
+public class ExtractDigitsSumFromString {
 
   public static void main(String[] args) {
-    System.out.println(extractSumFromString("ab123def45gh2"));
+    System.out.println(extractSumFromString("ab123def45gh32"));
   }
 
   private static int extractSumFromString(String s) {
