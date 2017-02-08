@@ -36,6 +36,7 @@ public class ExtractSumFromString {
         }
 
         decimalPlace++;
+
       } else isDigit = false;
 
       if ((!isDigit && decimalPlace > 0) || (i == length - 1)) {
@@ -48,8 +49,15 @@ public class ExtractSumFromString {
 
     int total = 0;
     for (int i = 0; i < valuesList.size(); i++) {
+      if (i == 0) {
+        System.out.print(valuesList.get(i) );
+      } else {
+        System.out.print(" + " + valuesList.get(i));
+      }
       total = total + valuesList.get(i);
     }
+
+    System.out.print(" = ");
 
     return total;
   }
