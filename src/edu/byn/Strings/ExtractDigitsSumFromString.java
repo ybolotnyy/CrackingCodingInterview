@@ -1,6 +1,7 @@
 package edu.byn.Strings;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Created by ybolotnyy on 2/8/17.
@@ -8,7 +9,13 @@ import java.util.ArrayList;
 public class ExtractDigitsSumFromString {
 
   public static void main(String[] args) {
-    System.out.println(extractSumFromString("ab123def45gh32"));
+    System.out.println("Enter a string contains some numbers");
+    Scanner in = new Scanner(System.in);
+    String str = in.next();
+
+    if (str == null || str.length() == 0) str = "ab123def45gh32";
+
+    System.out.println(extractSumFromString(str));
   }
 
   private static int extractSumFromString(String s) {
