@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
  */
 public class RemoveDups {
   public static void main(String[] args) {
-    System.out.println(removeDups("hello"));
+    System.out.println(removeDups("hheeeeeellooooo"));
   }
 
   public static String removeDups(String s) {
@@ -17,6 +17,7 @@ public class RemoveDups {
     * use a character's integer code as index to reflect character presence in [256] boolean array
     * if character presence is True then it's a dup, so remove it
     * */
+    System.out.println("input string: " + s);
 
     if (s == null) return null;
     int length = s.length();
