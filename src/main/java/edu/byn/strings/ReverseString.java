@@ -1,6 +1,4 @@
-package edu.byn.Strings;
-
-import java.util.Arrays;
+package main.java.edu.byn.strings;
 
 /**
  * Created by ybolotnyy on 2/13/17.

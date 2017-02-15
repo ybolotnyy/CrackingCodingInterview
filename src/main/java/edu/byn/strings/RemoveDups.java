@@ -1,7 +1,6 @@
-package edu.byn.Strings;
+package main.java.edu.byn.strings;
 
 import java.util.Arrays;
-import java.util.StringTokenizer;
 
 /**
  * Created by ybolotnyy on 2/9/17.

@@ -1,4 +1,4 @@
-package edu.byn.Strings;
+package main.java.edu.byn.strings;
 
 /**
  * Created by ybolotnyy on 2/13/17.

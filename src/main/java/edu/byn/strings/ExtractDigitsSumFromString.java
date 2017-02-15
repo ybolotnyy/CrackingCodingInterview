@@ -1,4 +1,4 @@
-package edu.byn.Strings;
+package main.java.edu.byn.strings;
 
 import java.util.ArrayList;
 import java.util.Scanner;
