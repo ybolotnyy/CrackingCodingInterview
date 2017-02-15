@@ -5,10 +5,10 @@ package main.java.edu.byn.strings;
  */
 public class ChangeSpacesWith20 {
   public static void main(String[] args) {
-    System.out.println(changeSpacesWith20("hello world how are you"));
+    System.out.println(new ChangeSpacesWith20().changeSpacesWith20("hello world how are you"));
   }
 
-  private static String changeSpacesWith20(String s) {
+  public String changeSpacesWith20(String s) {
     if (s == null) return null;
     int len = s.length();
     if (len == 0) return s;
