@@ -15,4 +15,9 @@ public class ChangeSpacesWith20Test {
     assertEquals(c.changeSpacesWith20(null), null, "Null string should return null");
   }
 
+  @Test
+  public void testEmptyStringShouldReturnInputString() {
+    ChangeSpacesWith20 c = new ChangeSpacesWith20();
+    assertEquals(c.changeSpacesWith20(""), "");
+  }
 }
