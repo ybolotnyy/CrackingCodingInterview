@@ -24,17 +24,20 @@ public class RotateMatrix {
   }
 
   public static int[][] rotateSquareMatrix(int[][] m) {
-    int rows = m.length;
-    int columns = m[0].length;
     int size = m.length;
 
-    // rotate by layer starting from corners going clockwise
-    for (int offset = 0; offset < size - 1; offset++) {
-      int t = m[0][0 + offset];
-      m[0][0 + offset] = m[size - 1 - offset][0];
-      m[size - 1 - offset][0] = m[size - 1][size - 1 - offset];
-      m[size - 1][size - 1 - offset] = m[0 + offset][size - 1];
-      m[0 + offset][size - 1] = t;
+    for (int layer = 0; layer < (size / 2); layer++) {
+      // rotate by layer starting from corners going clockwise
+      for (int offset = 0; offset < size - 1 - layer * 2; offset++) {
+        int t = m[layer + 0][layer + 0 + offset];
+        m[layer + 0][layer + 0 + offset] = m[size - 1 - layer - offset][layer + 0];
+        m[size - 1 - layer - offset][layer + 0] = m[size - 1 - layer][size - 1 - layer - offset];
+        m[size - 1 - layer][size - 1 - layer - offset] = m[layer + 0 + offset][size - 1 - layer];
+        m[layer + 0 + offset][size - 1 - layer] = t;
+
+        System.out.printf("\n layer=%d; offset=%d \n", layer, offset);
+        print2dMatrix(m);
+      }
     }
 
     return m;
