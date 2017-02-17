@@ -17,7 +17,7 @@ public class RotateMatrix {
 
     for (int layer = 0; layer < (size / 2); layer++) {
       // rotate by layer starting from corners going clockwise
-      for (int offset = 0; offset < size - 1 - layer * 2; offset++) {
+      for (int offset = 0; offset < size -1 - layer * 2; offset++) {
         int t = m[layer][layer + offset];
         // left top corner <= left bottom corner
         m[layer][layer + offset] = m[size - 1 - layer - offset][layer];
