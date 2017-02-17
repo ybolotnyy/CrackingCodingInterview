@@ -16,11 +16,19 @@ public class RotateMatrix {
     };
 
     print2dMatrix(matrix);
-
     rotateSquareMatrix(matrix);
-
     print2dMatrix(matrix);
 
+    int[][] matrix1 = {
+            {1,2,3,4},
+            {1,2,3,4},
+            {1,2,3,4},
+            {1,2,3,4}
+    };
+
+    print2dMatrix(matrix1);
+    rotateSquareMatrix(matrix1);
+    print2dMatrix(matrix1);
   }
 
   public static int[][] rotateSquareMatrix(int[][] m) {
@@ -35,8 +43,8 @@ public class RotateMatrix {
         m[size - 1 - layer][size - 1 - layer - offset] = m[layer + 0 + offset][size - 1 - layer];
         m[layer + 0 + offset][size - 1 - layer] = t;
 
-        System.out.printf("\n layer=%d; offset=%d \n", layer, offset);
-        print2dMatrix(m);
+//        System.out.printf("\n layer=%d; offset=%d \n", layer, offset);
+//        print2dMatrix(m);
       }
     }
 
