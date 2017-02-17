@@ -16,6 +16,18 @@ public class Utils {
     return m;
   }
 
+  public static int[][] getMatrix(int size, int offset) {
+    int[][] m = new int[size][size];
+
+    for (int y = 0; y < size; y++) {
+      for (int x = 0; x < size; x++) {
+        m[y][x] = x + offset;
+      }
+    }
+
+    return m;
+  }
+
   public static void print2dMatrix(int[][] m) {
     int rowsNum = m.length;
     int columnsNum = m[0].length;
