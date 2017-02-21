@@ -35,10 +35,10 @@ public class CompressString {
         dupesCount = 0;
       } else
         out.append(currentChar);
+    }
 
-      if ( (dupesCount > 0) && (i == len - 1) ) {
-        out.append(dupesCount);
-      }
+    if (dupesCount > 0) {
+      out.append(dupesCount);
     }
 
     return out.toString();
