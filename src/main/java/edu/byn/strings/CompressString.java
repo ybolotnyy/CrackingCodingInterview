@@ -9,18 +9,15 @@ public class CompressString {
   }
 
   private static String compressString(char[] s) {
-    /*
-    * save first char to output array
-    * scan string char by char starting from 2nd char
-    * if current char is dupe of previous,
-    *   increment dupesCounter
-    * if current char become not dupe of previous,
-    *   add number of dupes (as digit) to output
-    *   reset dupesCounter
-    * */
-
-
-
+    int len = s.length;
+//     save first char to output array
+    char[] output =
+//     scan string char by char starting from 2nd char
+//     if current char is dupe of previous,
+//       increment dupesCounter
+//     if current char become not dupe of previous,
+//       add number of dupes (as digit) to output
+//       reset dupesCounter
 
     return new String(s);
   }
