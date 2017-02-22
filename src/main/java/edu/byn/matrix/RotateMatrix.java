@@ -1,6 +1,6 @@
 package main.java.edu.byn.matrix;
 
-import static main.java.edu.byn.utils.Utils.*;
+import static main.java.edu.byn.utils.Matrix.*;
 
 /**
  * Created by ybolotnyy on 2/16/17.

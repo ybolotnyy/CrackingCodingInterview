@@ -3,7 +3,7 @@ package main.java.edu.byn.utils;
 /**
  * Created by ybolotnyy on 2/16/17.
  */
-public class Utils {
+public class Matrix {
   public static int[][] getMatrix(int size) {
     int[][] m = new int[size][size];
 
