@@ -7,7 +7,7 @@ import main.java.edu.byn.utils.LinkedList;
  */
 public class RemoveDups {
   public static void main(String[] args) {
-    LinkedList list = new LinkedList(10);
+    LinkedList list = new LinkedList(20, 5);
     list.printLinkedList();
   }
 }

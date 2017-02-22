@@ -17,6 +17,13 @@ public class LinkedList {
     }
   }
 
+  public LinkedList(int nodesCount, int offset) {
+    first = null;
+    for (int i = 0; i < nodesCount; i++) {
+      insertFirst(i % offset); // modulus produces dupes
+    }
+  }
+
   public void insertFirst(int val) {
     Node newNode = new Node(val);
     newNode.next = first;
