@@ -33,6 +33,7 @@ public class NumToString {
       if (i > 2 || ( i == 1 && word11 > 20)) {
         sb.append(wordArray1[digit - 1] + " ");
       }
+
       if (i > 3) {
         sb.append(wordArray100[1] + " ");
       } else if (i > 2) {
