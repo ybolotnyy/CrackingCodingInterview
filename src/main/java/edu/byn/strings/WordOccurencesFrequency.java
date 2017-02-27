@@ -1,5 +1,7 @@
 package main.java.edu.byn.strings;
 
+import main.java.edu.byn.utils.TxtFileReader;
+
 import static main.java.edu.byn.utils.Print.prt;
 
 /**
@@ -43,6 +45,8 @@ public class WordOccurencesFrequency {
   }
 
   private static boolean wordOccurencesFrequency(String txt) {
+    TxtFileReader txtFileReader = new TxtFileReader();
+    txtFileReader.getFile("./src/main/resources/file/bible.txt");
     return false;
   }
 
