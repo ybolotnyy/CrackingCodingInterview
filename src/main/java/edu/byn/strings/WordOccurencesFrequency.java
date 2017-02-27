@@ -1,5 +1,7 @@
 package main.java.edu.byn.strings;
 
+import static main.java.edu.byn.utils.Print.prt;
+
 /**
  * Created by ybolotnyy on 2/26/17.
  */
@@ -36,6 +38,7 @@ public class WordOccurencesFrequency {
           "Genesis 1:30\tAnd to every beast of the earth, and to every fowl of the air, and to every thing that creepeth upon the earth, wherein there is life, I have given every green herb for meat: and it was so.";
 
   public static void main(String[] args) {
+    prt(txt);
     System.out.println(wordOccurencesFrequency(txt));
   }
 
