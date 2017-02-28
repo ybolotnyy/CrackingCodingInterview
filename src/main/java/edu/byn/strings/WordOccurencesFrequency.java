@@ -2,8 +2,7 @@ package main.java.edu.byn.strings;
 
 import main.java.edu.byn.utils.TxtFileReader;
 
-import java.util.ArrayList;
-import java.util.Hashtable;
+import java.util.*;
 
 import static main.java.edu.byn.utils.Print.prt;
 
@@ -14,11 +13,23 @@ public class WordOccurencesFrequency {
 
   public static void main(String[] args) {
     ArrayList<String> al = new TxtFileReader().getFileStrings("./src/main/resources/file/bible.txt");
-    System.out.println(prepareDictionary(al));
+    Hashtable<String, Integer> ht = prepareDictionary(al);
+
+    // Get a set of the entries
+    Set set = ht.entrySet();
+    // Get an iterator
+    Iterator i = set.iterator();
+    // Display elements
+    while(i.hasNext()) {
+      Map.Entry me = (Map.Entry) i.next();
+      System.out.print(me.getKey() + ": ");
+      System.out.println(me.getValue());
+    }
+
   }
 
-  private static boolean prepareDictionary(ArrayList<String> textArray) {
-    if (textArray == null || textArray.size() == 0) return false;
+  private static Hashtable<String, Integer> prepareDictionary(ArrayList<String> textArray) {
+    if (textArray == null || textArray.size() == 0) return null;
 
     Hashtable<String, Integer> ht = new Hashtable<>();
 
@@ -36,7 +47,7 @@ public class WordOccurencesFrequency {
       }
     }
 
-    return true;
+    return ht;
   }
 
 }
