@@ -24,7 +24,7 @@ public class TxtFileReader {
       int i = 0;
       while ((line = bufferedReader.readLine()) != null) {
         linesArray.add(line);
-        System.out.println(linesArray.get(i++));
+        //System.out.println(linesArray.get(i++));
       }
 
       bufferedReader.close();
