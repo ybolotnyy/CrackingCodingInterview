@@ -1,14 +1,50 @@
 package main.java.edu.byn.strings;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by ybolotnyy on 3/15/17.
  */
 public class MaxOccuredChar {
   public static void main(String[] args) {
-    System.out.println(getMaxOccurredChar("Hello world. I make you better"));
+    System.out.println(getMaxOccurredChar_iterative("Hello world. I love you and make you better"));
+    System.out.println(getMaxOccurredChar_hashmap("Hello world. I love you and make you better"));
   }
 
-  private static String getMaxOccurredChar(String s) {
+  private static String getMaxOccurredChar_hashmap(String s) {
+    if (s == null) return null;
+    int len = s.length();
+    if (len == 0) return null;
+
+    HashMap<Character, Integer> map = new HashMap<>(len);
+
+    for (int i = 0; i < len - 1; i++) {
+      char currentChar = s.charAt(i);
+      if (currentChar == ' ') continue;  // skip spaces from counting
+
+      if (!map.containsKey(currentChar)) {
+        map.put(currentChar, 1);
+      } else {
+        int charOccurCount = map.get(currentChar);
+        map.put(currentChar, charOccurCount + 1);
+      }
+    }
+
+    int maxCount = -1;
+    Character maxOccurChar = s.charAt(0);
+    for (Map.Entry<Character, Integer> entry : map.entrySet()) {
+      int occurCount = entry.getValue();
+      if (occurCount > maxCount) {
+        maxCount = occurCount;
+        maxOccurChar = entry.getKey();
+      }
+    }
+
+    return String.format("char '%c' occurs %d times", maxOccurChar, maxCount);
+  }
+
+  private static String getMaxOccurredChar_iterative(String s) {
 
     if (s == null) return null;
     int len = s.length();
