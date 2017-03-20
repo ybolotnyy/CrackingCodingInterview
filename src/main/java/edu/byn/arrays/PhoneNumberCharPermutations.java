@@ -1,8 +1,6 @@
 package main.java.edu.byn.arrays;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.*;
 
 import static main.java.edu.byn.utils.Print.prt;
 
@@ -11,47 +9,50 @@ import static main.java.edu.byn.utils.Print.prt;
  */
 public class PhoneNumberCharPermutations {
   public static void main(String[] args) {
-    //prt(getPhoneNumberCharsPermutations("0123456789"));
-    prt(getPhoneNumberCharsPermutations("0123"));
+    prt(letterCombinations("345").toString());
   }
 
-  private static String getPhoneNumberCharsPermutations(String s) {
-    if (s == null) return null;
-    int len = s.length();
-    if (len == 0) return "";
 
-    HashMap<Character, String> dict = new HashMap<>(10);
-    dict.put('0', null);
-    dict.put('1', null);
-    dict.put('2', "ABC");
-    dict.put('3', "DEF");
-    dict.put('4', "GHI");
-    dict.put('5', "JKL");
-    dict.put('6', "MNO");
-    dict.put('7', "PQRS");
-    dict.put('8', "TUV");
-    dict.put('9', "WXYZ");
+  public static ArrayList<String> letterCombinations(String digits) {
+        ArrayList<String> result = new ArrayList<String>();
 
-    ArrayList<String> result = new ArrayList<>();
+        if (digits == null || digits.equals("")) {
+            return result;
+        }
 
-    for (int i = 0; i < len -1; i++) {
-      char outerLoopDigit = s.charAt(i);
-      if (dict.get(outerLoopDigit) == null) continue;
-      char[] outerLoopChars = dict.get(outerLoopDigit).toCharArray();
-      int outerLoopCharsCount = outerLoopChars.length;
+        Map<Character, char[]> map = new HashMap<Character, char[]>();
+        map.put('0', new char[] {});
+        map.put('1', new char[] {});
+        map.put('2', new char[] { 'a', 'b', 'c' });
+        map.put('3', new char[] { 'd', 'e', 'f' });
+        map.put('4', new char[] { 'g', 'h', 'i' });
+        map.put('5', new char[] { 'j', 'k', 'l' });
+        map.put('6', new char[] { 'm', 'n', 'o' });
+        map.put('7', new char[] { 'p', 'q', 'r', 's' });
+        map.put('8', new char[] { 't', 'u', 'v'});
+        map.put('9', new char[] { 'w', 'x', 'y', 'z' });
 
-      for (int j = 0; j < len - 1; j++) {
-        if (i == j) continue;  // skip self-to-self iteration
-        char innerLoopDigit = s.charAt(i);
-        if (dict.get(innerLoopDigit) == null) continue;
-        char[] innerLoopChars = dict.get(innerLoopDigit).toCharArray();
-        int innerLoopCharsCount = innerLoopChars.length;
+        StringBuilder sb = new StringBuilder();
+        helper(map, digits, sb, result);
 
-
-
-      }
+        return result;
     }
 
-    return result.toString();
-  }
+    private static void helper(Map<Character, char[]> map, String digits,
+        StringBuilder sb, ArrayList<String> result) {
+        if (sb.length() == digits.length()) {
+            result.add(sb.toString());
+            return;
+        }
+
+        for (char c : map.get(digits.charAt(sb.length()))) {
+            sb.append(c);
+            helper(map, digits, sb, result);
+            sb.deleteCharAt(sb.length() - 1);
+        }
+    }
+
+
+
+
 }
